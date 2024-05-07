@@ -66,5 +66,11 @@ public class RequestBodyJsonController {
     public HelloData requestBodyJsonV4(@RequestBody HelloData data) throws IOException {
         log.info("username={},age={},eamil={}",data.getUsername(),data.getAge(),data.getEmail());
         return data;
+        // HelloData가 HttpMessageConverter에 들어가서 Json형태로 바뀌고 출력이 된다
+
+        // RequestBody : JSON으로 입력 -> HTTP메시지 컨버터 -> 객체
+        // ResponseBody : 객체 -> HTTP메시지 컨버터 -> JSON 응답
+
+        // Json으로 입력된 값이 객체로 변경이 되고 출력될때 다시 Json으로 변형되서 출력이 된다
     }
 }
