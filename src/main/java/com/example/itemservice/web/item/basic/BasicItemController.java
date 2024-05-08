@@ -20,15 +20,15 @@ public class BasicItemController {
 
     // 전체조회
     @GetMapping
-    public String items(Model model) {
-        List<Item> items = itemRepository.findAll();
-        model.addAttribute("items",items);
+    public String items(Model model){
+        List<Item> itemsList = itemRepository.findAll();
+        model.addAttribute("items", itemsList);
         return "basic/items";
     }
 
     @PostConstruct
     public void init() {
-        itemRepository.save(new Item("testA",10000,10));
-        itemRepository.save(new Item("tesB",10000,10));
+        itemRepository.save(new Item("testA",15000,10));
+        itemRepository.save(new Item("testB",13000,10));
     }
 }
